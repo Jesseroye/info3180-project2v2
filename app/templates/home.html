@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <body background="images/wishlist.jpg">
+
+    <div class="navbar-link" ng-if="Master.isauthorized();">Signed in as </p><p>{{person_name }}
+    <div>
+        Hey visit your wish list 
+        <botton ng-click="Master.setRoute('/wishList')"> </botton>
+    </div>
+    </div>
+    <div class="footer">
+      <!--Copyright-->
+      <p>&copy; 2017 Make-A-WishList Inc.</p>
+    </div>
+  </body>
+{% endblock %}

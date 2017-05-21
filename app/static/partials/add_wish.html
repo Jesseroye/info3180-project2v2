@@ -3,12 +3,13 @@
     <title>Make-A-Wishlist</title>
     <link href="/static/css/additem.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <script type="text/javascript" src="/static/js/additem"></script>
+    <script src="/static/js/index.js"></script>
+  <script src="/static/js/app_controller.js"></script>
   <body background="images/wishlist.jpg">
   <ul>
-      <li><a class = "active" ng-click="Master.setRoute('home')">Home</a></li>
-      <li><a ng-click="Master.setRoute('share')">Share</a></li>
-      <li><a ng-click="Master.setRoute('logout')">Logout</a></li>
+      <li><a class = "active" ng-click="Master.Routing('home')">Home</a></li>
+      <li><a ng-click="Master.Routing('share')">Share</a></li>
+      <li><a ng-click="Master.Routing('logout')">Logout</a></li>
   </ul>
 
     <h2>Add Item(s) To Wishlist</h2>
@@ -17,7 +18,7 @@
 
 <div id="id02" class="modal">
   <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
-  <form class="modal-content animate" ng-submit="wishlist.postItem()">
+  <form class="modal-content animate" >
     <div class="container">
       <label><strong>Item 1</strong></label>
       <input type="text" placeholder="Enter an item" name="i1" required>
@@ -35,7 +36,7 @@
       <input type="text" placeholder="Enter an item" name="i5">
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn" ng-click="Master.setRoute('wishList')">Add Item(s)</button>
+        <button type="submit" class="signupbtn" ng-click="Master.Routing('wishList')">Add Item(s)</button>
       </div>
     </div>
   </form>

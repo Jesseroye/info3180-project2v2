@@ -81,7 +81,7 @@ def swishlist(uid):
     elif request.method == "GET":
         if user:
             wishlst = []
-            wishes = db.session.get_bind().execute(select, id=user.id)
+            wishes = db.session.get_bind().execute(select, uid=user.uid)
             if wishes:
                 for i in wishes:
                     wish = {'pid': i["pid"], 'name': i["name"], 'description': i["description"], 'url': i["url"], 'thumbnail_url': i["thumbnail"]}
@@ -122,7 +122,7 @@ def login():
 
 @app.route("/api/users/<int:uid>/wishlist/<int:pid>", methods=["DELETE"])
 def delete_item(uid, pid):
-    user = db.session.query(User).filter_by(id=uid).first()
+    user = db.session.query(User).filter_by(uid=uid).first()
     wish = db.session.query(Wish).filter_by(pid=pid).first()
     if user and wish :
         wish = db.session.query(Wish).filter_by(pid=pid).first()
@@ -203,7 +203,9 @@ def wishlist(uid):
             abort(404)
         return jsonify(error=errors, info=info, message=message)
         
-
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 @app.after_request
 def add_header(response):   

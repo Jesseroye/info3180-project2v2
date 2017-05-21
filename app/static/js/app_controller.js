@@ -2,8 +2,8 @@
     "use strict";
     
     angular
-        .module('wishingApp') //Accesses the angular module wishListApp
-            .controller('Master', Master); //Controller for wishListApp created
+        .module('wishingApp') 
+            .controller('Master', Master); 
         
     Master.$inject = ['$http', '$scope', '$location', '$window', '$route'];
    

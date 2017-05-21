@@ -2,8 +2,8 @@
   <h1>{{ person_name }}'s Wishlist</h1>
   <p>Make-A-Wishlist today!</p>
 </div>
-<div data-ng-init="Master.getWishList();">
-<div ng-if="Master.wishes.message"role="alert">{{ Master.sent.message }}</div>
+<div data-ng-init="Master.getWishList()">
+<div ng-if="Master.sent.message"role="alert">{{ Master.sent.message }}</div>
 <div>
   <div ng-repeat="wish in Master.wishes.stuff">
     <div>

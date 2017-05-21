@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block main %}
-  <body background="images/wishlist.jpg">
+  <body ng-app="wishingApp" ng-controller="Master" background="images/wishlist.jpg">
 
     <p class="navbar-link" ng-if="Master.isauthorized();">Signed in as </p><p>{{person_name }}</p>
     <form ng-if="!Master.isauthorized()" ng-submit="Master.login()" >
@@ -16,11 +16,13 @@
         <button type="submit" id="loginbtn">Login</button>
         <input type="checkbox" checked="checked"> Remember me
       </div>
-
+      <div>
+        <a ng-click="Master.Route('signup')">Sign up </a>
+    </div>
+    <div ng-view></div>
       <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
+        <button type="button" ng-click="Master.Routing('/signup')">Sign up</button>
         <!--<button type="button" class="logout"><a href="logout.html#logout">Logout</a></button>-->
-        <span class="psw">Forgot <a href="forgot_pw.html">password?</a></span>
         <span class="psw">Go to <a href="index.html#home">Homepage <br></a></span>
       </div>
     </form>
@@ -29,4 +31,6 @@
       <p>&copy; 2017 Make-A-WishList Inc.</p>
     </div>
   </body>
+  <script src="/static/js/index.js"></script>
+  <script src="/static/js/app_controller.js"></script>
 {% endblock %}

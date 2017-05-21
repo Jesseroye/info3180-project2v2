@@ -37,9 +37,8 @@
         	            controller: 'Master'
         	         })
         	        .otherwise( { 
-        	            redirectTo:'/home',
-        	            templateUrl: 'static/partials/index.html',
-        	            controller: 'Master'
+        	            redirectTo:'/',
+        	            templateUrl: '/app/templates/index.html',
         	        });
         	}
 	);

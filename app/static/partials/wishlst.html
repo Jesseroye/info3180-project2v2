@@ -1,11 +1,11 @@
 <div>
   <h1>Your Wishlist</h1>
-  <p><a ng-click="Master.setRoute('add')"  role="button">Make a wish</a>
+  <p><a ng-click="Master.Routing('add')"  role="button">Make a wish</a>
   &emsp;
-  <a ng-click="Master.setRoute('share')" role="button">Share Wishlist</a></p>
+  <a ng-click="Master.Routing('share')" role="button">Share Wishlist</a></p>
 </div>
 <div data-ng-init="Master.getWishList();">
-<div ng-if="Master.wishes.message" role="alert">{{ Master.wishes.message }}</div>
+<div ng-if="!Master.wishes.stuff" role="alert">{{ Master.sent.message }}</div>
 <div>
   <div ng-repeat="wish in Master.wishes.stuff">
     <div>
